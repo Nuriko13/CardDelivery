@@ -26,11 +26,10 @@ public class CardDelivery {
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.DELETE);
         $("[data-test-id='date'] input").setValue(meetingDate);
         $("[data-test-id='name'] input").setValue("Иванов-Петров Иван");
-        $("[data-test-id='phone'] input").setValue("+79265663313");
+        $("[data-test-id='phone'] input").setValue("+79123456789");
         $("[data-test-id='agreement']").click();
         $("button.button").click();
         $(".notification__content").shouldBe(Condition.visible, Duration.ofSeconds(15))
                 .shouldHave(Condition.exactText("Встреча успешно забронирована на " + meetingDate));
     }
-
 }
